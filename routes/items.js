@@ -2,24 +2,10 @@ var express = require("express");
 var router = express.Router();
 const fetch = require("node-fetch"); // node-fetch install
 const Item = require("../models/items");
-const { checkBody } = require("../modules/checkBody");
 
 // CREATE A NEW ITEM
 router.post("/newitem", (req, res) => {
-  if (
-    !checkBody(req.body, [
-      "itemName",
-      "image",
-      "url",
-      "dealer",
-      "booked",
-      "price",
-      "category",
-    ])
-  ) {
-    res.json({ result: false, error: "Missing or empty fields" });
-    return;
-  }
+
 
   const newItem = new Item({
     itemName: req.body.itemName,
