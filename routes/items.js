@@ -73,7 +73,7 @@ router.put("/unbook", async (req, res) => {
   if (!item) return res.json({ result: false, error: "Item not found" });
   // Check the user's email
   console.log("DB:",item.email,"Req", req.body._id);
-  if (req.body.email !== item.email)
+  if (req.body.email.toLowerCase() !== item.email.toLowerCase())
     return res.json({ result: false, error: "Email not matching" });
   // Cancel the booking
   item.booked = false;
