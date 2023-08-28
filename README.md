@@ -19,7 +19,7 @@ The Listopia project has been deployed on Vercel:
 
 **Database:** MongoDB
 
-## Backend
+## Frontend
 
 The application's frontend is available on my Github as well [here](https://github.com/michaelrasolo/listopia-frontend).
 
