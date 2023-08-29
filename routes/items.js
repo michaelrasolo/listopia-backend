@@ -28,7 +28,19 @@ module.exports = router;
 router.get("/", (req, res) => {
   Item.find({})
     .then((items) => {
-      res.json({ result: true, items });
+      const itemElements = items.map(item => {
+        return {
+          itemName: item.itemName,
+          image: item.image,
+          url: item.url,
+          dealer: item.dealer,
+          booked: item.booked,
+          category: item.category,
+          price: item.price,
+          desc: item.desc,
+        }
+      })
+      res.json({ result: true, items:itemElements });
     })
     .catch((error) => {
       console.error(error);
@@ -39,7 +51,19 @@ router.get("/", (req, res) => {
 router.get("/:category", (req, res) => {
   Item.find({ category: req.params.category })
     .then((items) => {
-      res.json({ result: true, items });
+      const itemElements = items.map(item => {
+        return {
+          itemName: item.itemName,
+          image: item.image,
+          url: item.url,
+          dealer: item.dealer,
+          booked: item.booked,
+          category: item.category,
+          price: item.price,
+          desc: item.desc,
+        }
+      })
+      res.json({ result: true, items: itemElements });
     })
     .catch((error) => {
       console.error(error);
