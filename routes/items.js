@@ -38,7 +38,8 @@ router.get("/", (req, res) => {
           category: item.category,
           price: item.price,
           desc: item.desc,
-          gifter: item.gifter
+          gifter: item.gifter,
+          _id: item._id
         }
       })
       res.json({ result: true, items:itemElements });
@@ -62,7 +63,8 @@ router.get("/:category", (req, res) => {
           category: item.category,
           price: item.price,
           desc: item.desc,
-          gifter: item.gifter
+          gifter: item.gifter,
+          _id: item._id
 
         }
       })
